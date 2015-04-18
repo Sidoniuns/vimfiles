@@ -61,9 +61,15 @@ autocmd Filetype ruby,rb,rails,eruby set tw=110 formatoptions=tcq
 
 syntax enable
 set t_Co=256
+set term=screen-256color
+set list
+set listchars=tab:▸\ ,eol:¬
 set background=dark
 colorscheme railscasts
 set synmaxcol=500
+set ts=2 sw=2 et
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 
 " Make Y like D
 nnoremap Y y$

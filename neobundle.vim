@@ -36,6 +36,10 @@ NeoBundle 'airblade/vim-gitgutter'
 "NeoBundle 'klen/python-mode'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'BtPht/python_editing'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'ciaranm/inkpot'
+NeoBundle 'ekalinin/Dockerfile.vim'
 
 call neobundle#end()
 
