@@ -40,6 +40,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'ciaranm/inkpot'
 NeoBundle 'ekalinin/Dockerfile.vim'
+NeoBundle 'altercation/vim-colors-solarized'
 
 call neobundle#end()
 

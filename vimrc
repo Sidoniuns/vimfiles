@@ -1,3 +1,6 @@
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+set laststatus=2
+
 source ~/.vim/neobundle.vim
 
 scriptencoding utf8
@@ -40,9 +43,9 @@ set autoread autowrite
 
 set autoindent copyindent cindent smartindent
 
-set tabstop=2 shiftwidth=2 softtabstop=2
+set tabstop=4 shiftwidth=0 softtabstop=4
 
-set expandtab smarttab shiftround
+set noexpandtab smarttab shiftround
 
 set backspace=indent,eol,start
 
@@ -65,9 +68,13 @@ set term=screen-256color
 set list
 set listchars=tab:▸\ ,eol:¬
 set background=dark
-colorscheme railscasts
+
+let g:solarized_termcolors=256
+
+colorscheme solarized
+"colorscheme railscasts
 set synmaxcol=500
-set ts=2 sw=2 et
+"set ts=2 sw=2 et
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
@@ -213,12 +220,3 @@ function! PreserveFN(fn, ...)
 
   return g:preservedReturn
 endfunction
-
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-
-set laststatus=2
-
-set guifont=Liberation\ Mono\ for\ Powerline\ 10
-let g:Powerline_symbols = 'fancy'
