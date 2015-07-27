@@ -45,7 +45,9 @@ set autoindent copyindent cindent smartindent
 
 set tabstop=4 shiftwidth=0 softtabstop=4
 
-set noexpandtab smarttab shiftround
+set noexpandtab
+
+set smarttab shiftround
 
 set backspace=indent,eol,start
 
@@ -99,6 +101,7 @@ noremap <Leader>E :qa!<CR>  " Quit all windows
 " Easier moving between tabs
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
+map <Leader>t <esc>:tabnew<CR>
 
 " Map sort function to a key
 vnoremap <Leader>s :sort<CR>
