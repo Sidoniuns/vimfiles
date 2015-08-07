@@ -43,17 +43,17 @@ set autoread autowrite
 
 set autoindent copyindent cindent smartindent
 
-set tabstop=4 shiftwidth=0 softtabstop=4
+set tabstop=4 shiftwidth=4 softtabstop=4
 
-set noexpandtab
-
-set smarttab shiftround
+set smarttab shiftround expandtab
 
 set backspace=indent,eol,start
 
 set mousehide mouse=a ttymouse=xterm2
 
 set sessionoptions+=globals
+
+set nobackup nowritebackup noswapfile
 
 set fileformats+=mac
 
@@ -62,7 +62,7 @@ let mapleader=','
 " Automatic realoading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
-autocmd Filetype ruby,rb,rails,eruby set tw=110 formatoptions=tcq
+autocmd Filetype ruby,rb,rails,eruby,py set tw=110 formatoptions=tcq
 
 syntax enable
 set t_Co=256
@@ -101,7 +101,12 @@ noremap <Leader>E :qa!<CR>  " Quit all windows
 " Easier moving between tabs
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
+
+" Create new tab
 map <Leader>t <esc>:tabnew<CR>
+
+" Divide tab
+map <Leader>d <esc>:new<CR>
 
 " Map sort function to a key
 vnoremap <Leader>s :sort<CR>
@@ -152,11 +157,12 @@ let g:syntastic_auto_jump = 0
 let g:syntastic_error_symbol = 'e:'
 let g:syntastic_warning_symbol = 'w:'
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [
-      \ 'ruby',
-      \ 'elixir',
-      \ 'js',
-      \ 'css',
-      \ 'vim' ] }
+			\ 'ruby',
+			\ 'elixir',
+			\ 'js',
+			\ 'css',
+			\ 'vim',
+			\ 'python'] }
 
 hi! link SyntasticWarningSign Search
 hi! link SyntasticErrorSign ErrorMsg

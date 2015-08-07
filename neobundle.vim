@@ -27,7 +27,6 @@ NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'KabbAmine/zeavim.vim'
-
 NeoBundle 'lervag/vim-latex'
 NeoBundle 'docunext/closetag.vim'
 NeoBundle 'leshill/vim-json'
