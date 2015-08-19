@@ -1,4 +1,4 @@
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set laststatus=2
 
 source ~/.vim/neobundle.vim
@@ -157,12 +157,12 @@ let g:syntastic_auto_jump = 0
 let g:syntastic_error_symbol = 'e:'
 let g:syntastic_warning_symbol = 'w:'
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [
-			\ 'ruby',
-			\ 'elixir',
-			\ 'js',
-			\ 'css',
-			\ 'vim',
-			\ 'python'] }
+            \ 'ruby',
+            \ 'elixir',
+            \ 'js',
+            \ 'css',
+            \ 'vim',
+            \ 'python'] }
 
 hi! link SyntasticWarningSign Search
 hi! link SyntasticErrorSign ErrorMsg
