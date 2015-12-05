@@ -107,6 +107,7 @@ map <Leader>t <esc>:tabnew<CR>
 
 " Divide tab
 map <Leader>d <esc>:new<CR>
+map <Leader>v <esc>:vnew<CR>
 
 " Map sort function to a key
 vnoremap <Leader>s :sort<CR>
