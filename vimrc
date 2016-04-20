@@ -43,7 +43,7 @@ set autoread autowrite
 
 set autoindent copyindent cindent smartindent
 
-set tabstop=4 shiftwidth=4 softtabstop=4
+set tabstop=2 shiftwidth=2 softtabstop=2
 
 set smarttab shiftround expandtab
 
