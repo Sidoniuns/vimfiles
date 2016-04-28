@@ -59,6 +59,8 @@ set fileformats+=mac
 
 let mapleader=','
 
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " Automatic realoading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
