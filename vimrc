@@ -74,6 +74,7 @@ set listchars=tab:▸\ ,eol:¬
 set background=dark
 
 let g:solarized_termcolors=256
+"let g:airline_theme="wombat"
 
 colorscheme solarized
 "colorscheme railscasts
