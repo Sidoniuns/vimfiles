@@ -71,13 +71,13 @@ set t_Co=256
 set term=screen-256color
 set list
 set listchars=tab:▸\ ,eol:¬
-set background=dark
+"set background=dark
 
-let g:solarized_termcolors=256
-"let g:airline_theme="wombat"
+"let g:solarized_termcolors=256
 
-colorscheme solarized
-"colorscheme railscasts
+"colorscheme solarized
+colorscheme quantum
+
 set synmaxcol=500
 "set ts=4 sw=4 et
 "let g:indent_guides_start_level = 2
@@ -139,7 +139,7 @@ cab WQ wq
 cab Q  q
 
 " NERDTree
-let NERDTreeWinPos="right"
+let NERDTreeWinPos="left"
 let NERDTreeHighlightCursorline=1
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeMinimalUI=1
