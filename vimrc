@@ -73,10 +73,14 @@ set list
 set listchars=tab:▸\ ,eol:¬
 "set background=dark
 
+let g:lightline = {}
+let g:lightline.colorscheme = 'neodark'
+
+let g:neodark#use_256color = 1
 "let g:solarized_termcolors=256
 
+colorscheme neodark
 "colorscheme solarized
-colorscheme quantum
 
 set synmaxcol=500
 "set ts=4 sw=4 et

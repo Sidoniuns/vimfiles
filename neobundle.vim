@@ -28,7 +28,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'ngmy/vim-rubocop'
-NeoBundle 'tyrannicaltoucan/vim-quantum'
+NeoBundle 'KeitaNakamura/neodark.vim'
 
 call neobundle#end()
 
