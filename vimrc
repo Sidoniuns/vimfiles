@@ -13,6 +13,11 @@ set showmatch
 
 runtime macros/matchit.vim
 
+set nocompatible
+if has("autocmd")
+  filetype indent plugin on
+endif
+
 set confirm
 
 set shortmess=atTI
@@ -73,17 +78,18 @@ set t_Co=256
 set term=screen-256color
 set list
 set listchars=tab:▸\ ,eol:¬
-"set background=dark
+set background=dark
 
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
 "let g:lightline.colorscheme = 'neodark'
 
-let g:neodark#use_256color = 1
+"let g:neodark#use_256color = 1
 "let g:solarized_termcolors=256
 
-colorscheme neodark
+colorscheme gruvbox
+"colorscheme neodark
 "colorscheme solarized
 
 hi IndentGuidesOdd  ctermbg=white

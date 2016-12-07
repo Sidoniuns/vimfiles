@@ -48,6 +48,9 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Shougo/neocomplete.git'
 NeoBundle 'briandoll/change-inside-surroundings.vim'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'nelstrom/vim-textobj-rubyblock'
+NeoBundle 'tpope/vim-endwise'
 
 call neobundle#end()
 
