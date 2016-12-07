@@ -3,6 +3,8 @@ set laststatus=2
 
 source ~/.vim/neobundle.vim
 
+let base16colorspace=256
+
 scriptencoding utf8
 
 set encoding=utf8 fileencoding=utf8 termencoding=utf8 nobomb
@@ -73,8 +75,10 @@ set list
 set listchars=tab:▸\ ,eol:¬
 "set background=dark
 
-let g:lightline = {}
-let g:lightline.colorscheme = 'neodark'
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+"let g:lightline.colorscheme = 'neodark'
 
 let g:neodark#use_256color = 1
 "let g:solarized_termcolors=256
@@ -82,10 +86,12 @@ let g:neodark#use_256color = 1
 colorscheme neodark
 "colorscheme solarized
 
+hi IndentGuidesOdd  ctermbg=white
+hi IndentGuidesEven ctermbg=lightgrey
+
 set synmaxcol=500
-"set ts=4 sw=4 et
-"let g:indent_guides_start_level = 2
-"let g:indent_guides_guide_size = 1
+set ts=2 sw=2 et
+let g:indent_guides_start_level = 2
 
 " Make Y like D
 nnoremap Y y$
