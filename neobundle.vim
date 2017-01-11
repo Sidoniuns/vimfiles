@@ -23,7 +23,7 @@ NeoBundle 'docunext/closetag.vim'
 NeoBundle 'leshill/vim-json'
 NeoBundle 'hdima/python-syntax'
 NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'mileszs/ack.vim'
@@ -51,6 +51,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'tpope/vim-endwise'
+NeoBundle 'JamshedVesuna/vim-markdown-preview'
 
 call neobundle#end()
 

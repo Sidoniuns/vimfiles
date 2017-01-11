@@ -73,6 +73,10 @@ autocmd! bufwritepost .vimrc source %
 
 autocmd Filetype ruby,rb,rails,eruby,py set tw=110 formatoptions=tcq
 
+" Markdown preview
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_github=1
+
 syntax enable
 set t_Co=256
 set term=screen-256color
