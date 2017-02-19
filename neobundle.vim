@@ -8,6 +8,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'vim-scripts/dbext.vim'
+NeoBundle 'astashov/vim-ruby-debugger'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
