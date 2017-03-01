@@ -56,6 +56,7 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'JamshedVesuna/vim-markdown-preview'
+NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
 

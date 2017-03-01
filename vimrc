@@ -5,6 +5,7 @@ source ~/.vim/neobundle.vim
 
 let base16colorspace=256
 
+let g:Powerline_symbols = 'fancy'
 scriptencoding utf8
 
 set encoding=utf8 fileencoding=utf8 termencoding=utf8 nobomb
