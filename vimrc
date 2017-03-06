@@ -1,11 +1,9 @@
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-set laststatus=2
-
 source ~/.vim/neobundle.vim
+
+set laststatus=2
 
 let base16colorspace=256
 
-let g:Powerline_symbols = 'fancy'
 scriptencoding utf8
 
 set encoding=utf8 fileencoding=utf8 termencoding=utf8 nobomb
@@ -28,6 +26,10 @@ set splitright splitbelow
 set incsearch hls ignorecase smartcase
 
 set cursorline colorcolumn=80
+set cursorline!
+set lazyredraw
+set synmaxcol=128
+syntax sync minlines=256
 
 set showcmd
 
@@ -82,23 +84,21 @@ syntax enable
 set t_Co=256
 set term=screen-256color
 set list
-set listchars=tab:▸\ ,eol:¬
+"set listchars=tab:▸\ ,eol:¬
+set showbreak=↪\
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set background=dark
 
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
-"let g:lightline.colorscheme = 'neodark'
+let g:indentLine_char = '|'
+let g:indentLine_color_term = 239
 
-"let g:neodark#use_256color = 1
-"let g:solarized_termcolors=256
+colo seoul256
 
-colorscheme gruvbox
-"colorscheme neodark
-"colorscheme solarized
+"let g:lightline = {
+"      \ 'colorscheme': 'wombat',
+"      \ }
 
-hi IndentGuidesOdd  ctermbg=white
-hi IndentGuidesEven ctermbg=lightgrey
+"colorscheme gruvbox
 
 set synmaxcol=500
 set ts=2 sw=2 et

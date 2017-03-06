@@ -57,6 +57,8 @@ NeoBundle 'nelstrom/vim-textobj-rubyblock'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'JamshedVesuna/vim-markdown-preview'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'junegunn/seoul256.vim'
+NeoBundle 'Yggdroot/indentLine'
 
 call neobundle#end()
 
