@@ -9,6 +9,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'vim-scripts/dbext.vim'
+NeoBundle 'vim-scripts/SQLComplete.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'marcweber/vim-addon-mw-utils'
@@ -59,6 +60,7 @@ NeoBundle 'JamshedVesuna/vim-markdown-preview'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'junegunn/seoul256.vim'
 NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'gregsexton/gitv'
 
 call neobundle#end()
 

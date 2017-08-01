@@ -51,7 +51,7 @@ set number numberwidth=3
 
 set autoread autowrite
 
-set autoindent copyindent cindent smartindent
+set copyindent cindent smartindent
 
 set tabstop=2 shiftwidth=2 softtabstop=2
 
@@ -74,7 +74,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Automatic realoading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
-autocmd Filetype ruby,rb,rails,eruby,py set tw=110 formatoptions=tcq
+autocmd Filetype ruby,rb,rails,eruby,py set formatoptions=tcq
 
 " Markdown preview
 let vim_markdown_preview_hotkey='<C-m>'
@@ -89,7 +89,7 @@ set showbreak=↪\
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set background=dark
 
-let g:indentLine_char = '|'
+"let g:indentLine_char = '|'
 let g:indentLine_color_term = 239
 
 colo seoul256
