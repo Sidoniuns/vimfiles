@@ -94,9 +94,25 @@ let g:indentLine_color_term = 239
 
 colo seoul256
 
-"let g:lightline = {
-"      \ 'colorscheme': 'wombat',
-"      \ }
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'pathname', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'pathname': 'PathFileName',
+      \ },
+      \ }
+
+function! PathFileName ()
+    return expand('%:p:h')
+endfunction
+
+let g:unite_force_overwrite_statusline = 0
+let g:vimfiler_force_overwrite_statusline = 0
+let g:vimshell_force_overwrite_statusline = 0
 
 "colorscheme gruvbox
 
