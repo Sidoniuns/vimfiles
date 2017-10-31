@@ -87,12 +87,16 @@ set list
 "set listchars=tab:▸\ ,eol:¬
 set showbreak=↪\
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
-set background=dark
+"set background=dark
 
 "let g:indentLine_char = '|'
-let g:indentLine_color_term = 239
+"let g:indentLine_color_term = 239
 
-colo seoul256
+"Darker Grey:
+let g:arcadia_Sunset = 1
+colorscheme arcadia
+
+"colo seoul256
 
 let g:lightline = {
       \ 'colorscheme': 'wombat',
@@ -113,8 +117,6 @@ endfunction
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
-
-"colorscheme gruvbox
 
 set synmaxcol=500
 set ts=2 sw=2 et

@@ -61,6 +61,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'junegunn/seoul256.vim'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'gregsexton/gitv'
+NeoBundle 'AlessandroYorba/Arcadia'
 
 call neobundle#end()
 
