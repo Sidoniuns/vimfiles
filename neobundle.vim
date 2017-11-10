@@ -62,6 +62,7 @@ NeoBundle 'junegunn/seoul256.vim'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'AlessandroYorba/Arcadia'
+NeoBundle 'michalbachowski/vim-wombat256mod'
 
 call neobundle#end()
 

@@ -87,16 +87,8 @@ set list
 "set listchars=tab:▸\ ,eol:¬
 set showbreak=↪\
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
-"set background=dark
 
-"let g:indentLine_char = '|'
-"let g:indentLine_color_term = 239
-
-"Darker Grey:
-let g:arcadia_Sunset = 1
-colorscheme arcadia
-
-"colo seoul256
+colo seoul256
 
 let g:lightline = {
       \ 'colorscheme': 'wombat',
