@@ -88,9 +88,9 @@ set list
 set showbreak=↪\
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 
-let g:sierra_Campfire = 1
-colorscheme sierra
-
+"let g:arcadia_Twilight = 1
+let g:arcadia_Sunset = 1
+colorscheme arcadia
 "colo seoul256
 
 let g:lightline = {
