@@ -88,11 +88,11 @@ set list
 set showbreak=↪\
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 
-"colo seoul256
 colo yowish
+"colorscheme challenger_deep
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'yowish',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'pathname', 'filename', 'modified' ] ]
