@@ -200,7 +200,6 @@ function! OpenNERDTreeMirror()
 endfunction
 
 noremap <silent> <C-\> :call OpenNERDTreeMirror()<CR>
-"nmap <silent> <F5> :call OpenNERDTreeMirror()<CR>
 nnoremap <silent> <leader>fl :NERDTreeFind<CR>
 command! E exec ":NERDTree ".expand('%:p')
 
