@@ -62,6 +62,7 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'KabbAmine/yowish.vim'
 NeoBundle 'challenger-deep-theme/vim'
+NeoBundle 'dyng/ctrlsf.vim'
 
 call neobundle#end()
 
