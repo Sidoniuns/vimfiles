@@ -32,6 +32,7 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'mileszs/ack.vim'
+NeoBundle 'dyng/ctrlsf.vim'
 NeoBundle 'ngmy/vim-rubocop'
 NeoBundle 'KeitaNakamura/neodark.vim'
 NeoBundle 'ecomba/vim-ruby-refactoring'
@@ -62,6 +63,9 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'KabbAmine/yowish.vim'
 NeoBundle 'challenger-deep-theme/vim'
+NeoBundle 'wakatime/vim-wakatime'
+NeoBundle 'w0rp/ale'
+NeoBundle 'tpope/vim-commentary'
 
 call neobundle#end()
 
