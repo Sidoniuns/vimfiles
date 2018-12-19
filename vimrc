@@ -1,5 +1,7 @@
 source ~/.vim/neobundle.vim
 
+set clipboard=unnamed
+
 set laststatus=2
 
 let base16colorspace=256
