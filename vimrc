@@ -1,97 +1,126 @@
 source ~/.vim/neobundle.vim
 
-set clipboard=unnamed
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set laststatus=2
+" Sets how many lines of history VIM has to remember
+set history=500
 
-let base16colorspace=256
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
 
-scriptencoding utf8
+" Set to auto read when a file is changed from the outside
+set autoread
 
-set encoding=utf8 fileencoding=utf8 termencoding=utf8 nobomb
-
-set showmatch
-
-runtime macros/matchit.vim
-
-set nocompatible
-if has("autocmd")
-  filetype indent plugin on
-endif
-
-set confirm
-
-set shortmess=atTI
-
-set splitright splitbelow
-
-set incsearch hls ignorecase smartcase
-
-set cursorline colorcolumn=80
-set cursorline!
-set lazyredraw
-set synmaxcol=128
-syntax sync minlines=256
-
-set showcmd
-
-set switchbuf=useopen,usetab,newtab
-
-set list listchars=tab:▸\ ,trail:·,nbsp:·
-
-set virtualedit=block
-
-set diffopt+=iwhite
-
-set nowrap wrapscan showbreak=..
-
-set undolevels=1000
-
-set title
-
-set number numberwidth=3
-
-set autoread autowrite
-
-set copyindent cindent smartindent
-
-set tabstop=2 shiftwidth=2 softtabstop=2
-
-set smarttab shiftround expandtab
-
-set backspace=indent,eol,start
-
-set mousehide mouse=a ttymouse=xterm2
-
-set sessionoptions+=globals
-
-set nobackup nowritebackup noswapfile
-
-set fileformats+=mac
-
+" Set leader key
 let mapleader=','
 
-let g:ackprg = 'ag --nogroup --nocolor --column'
+" Fast saving
+nmap <leader>w :w!<cr>
 
-" Automatic realoading of .vimrc
-autocmd! bufwritepost .vimrc source %
+" :W sudo saves the file
+" (useful for hadling the permission-denied error)
+command W w !sudo tee % > /dev/null
 
-autocmd Filetype ruby,rb,rails,eruby,py set formatoptions=tcq
+set clipboard=unnamed
 
-" Markdown preview
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_github=1
+set timeoutlen=1000
 
-syntax enable
-set t_Co=256
-set term=screen-256color
+set ttimeoutlen=0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VIM user interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set 7 lines to the cursor - when moving vertically using j/k
+set so=7
+
+" Avoid garbled characters in Chinese language windows OS
+let $LANG='en'
+set langmenu=en
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+" Turn on the Wild menu
+set wildmenu
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*_build/*
+set wildignore+=*/coverage/*
+if has("win16") || has("win32")
+    set wildignore+=.git\*,.hg\*,.svn\*
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+endif
+
+"Always show current position
+set ruler
+
+" Height of the command bar
+set cmdheight=2
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+
+" For regular expressions turn magic on
+set magic
+
+" Show matching brackets when text indicator is over them
+set showmatch
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" Properly disable sound on errors on MacVim
+if has("gui_macvim")
+    autocmd GUIEnter * set vb t_vb=
+endif
+
+" Display caracteres for final line
 set list
-"set listchars=tab:▸\ ,eol:¬
 set showbreak=↪\
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 
-colo yowish
-"colorscheme challenger_deep
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors and Fonts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Enable syntax highlighting
+syntax enable
+
+" Enable 256 colors palette in Gnome Terminal
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+
+try
+    colorscheme yowish
+catch
+endtry
 
 let g:lightline = {
       \ 'colorscheme': 'yowish',
@@ -105,17 +134,82 @@ let g:lightline = {
       \ },
       \ }
 
-function! PathFileName ()
-    return expand('%:p:h')
-endfunction
+set background=dark
 
-let g:unite_force_overwrite_statusline = 0
-let g:vimfiler_force_overwrite_statusline = 0
-let g:vimshell_force_overwrite_statusline = 0
+" Set extra options when running in GUI mode
+if has("gui_running")
+    set guioptions-=T
+    set guioptions-=e
+    set t_Co=256
+    set guitablabel=%M\ %t
+endif
 
-set synmaxcol=500
-set ts=2 sw=2 et
-let g:indent_guides_start_level = 2
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+set cursorline colorcolumn=80
+set cursorline!
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
+
+" Linebreak on 500 characters
+set lbr
+set tw=500
+
+set ai " Auto indent
+set si " Smart indent
+set nowrap " No Wrap lines
+
+set number numberwidth=3
+
+set splitbelow
+set splitright
+
+" set copyindent cindent smartindent
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Visual mode related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Moving around, tabs, widnows and buffers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+map <space> /
+map <c-space> ?
+
+" Disable highlight when <leader><cr> is pressed
+map <silent> <leader><cr> :noh<cr>
 
 " Make Y like D
 nnoremap Y y$
@@ -146,6 +240,17 @@ map <Leader>t <esc>:tabnew<CR>
 map <Leader>d <esc>:new<CR>
 map <Leader>v <esc>:vnew<CR>
 
+" Opens a new tab with the current buffer's path
+" Super useful when editing files in the same directory
+map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Specify the behavior when switching between buffers
+set switchbuf=useopen,usetab,newtab
+set stal=2
+
 " Map sort function to a key
 vnoremap <Leader>s :sort<CR>
 
@@ -159,6 +264,77 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Status line
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Always show the status line
+set laststatus=2
+
+" Format the status line
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Editing mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Remap VIM 0 to first non-blank character
+map 0 ^
+
+" Move a line of text using ALT+[jk] or Command+[jk] on mac
+nmap <M-j> mz:m+<cr>`z
+nmap <M-k> mz:m-2<cr>`z
+vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+if has("mac") || has("macunix")
+  nmap <D-j> <M-j>
+  nmap <D-k> <M-k>
+  vmap <D-j> <M-j>
+  vmap <D-k> <M-k>
+endif
+
+" Delete trailing white space on save, useful for some filetypes ;)
+fun! CleanExtraSpaces()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    silent! %s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
+
+if has("autocmd")
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Helper functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! PathFileName ()
+    return expand('%:p:h')
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Spell checking
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Pressing ,ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
+
+" Shortcuts using <leader>
+map <leader>sn ]s
+map <leader>sp [s
+map <leader>sa zg
+map <leader>s? z=
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Misc.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:deoplete#enable_at_startup = 1
+
 " Ctrlp settings
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
@@ -166,23 +342,12 @@ if executable('ag')
 endif
 
 let g:ctrlp_max_height = 30
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-set wildignore+=*.pyc
-set wildignore+=*_build/*
-set wildignore+=*/coverage/*
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
-
-" fixing some commands
-cab W  w
-cab Wq wq
-cab wQ wq
-cab WQ wq
-cab Q  q
 
 " NERDTree
 let NERDTreeWinPos="left"
@@ -204,84 +369,3 @@ endfunction
 noremap <silent> <C-\> :call OpenNERDTreeMirror()<CR>
 nnoremap <silent> <leader>fl :NERDTreeFind<CR>
 command! E exec ":NERDTree ".expand('%:p')
-
-autocmd BufReadPost,BufNewFile *_feature.rb set syntax=rspec
-
-let g:syntastic_check_on_open = 1
-let g:syntastic_enable_balloons = 0
-let g:syntastic_auto_jump = 0
-let g:syntastic_error_symbol = 'e:'
-let g:syntastic_warning_symbol = 'w:'
-let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [
-            \ 'ruby',
-            \ 'elixir',
-            \ 'js',
-            \ 'css',
-            \ 'vim',
-            \ 'python'] }
-
-hi! link SyntasticWarningSign Search
-hi! link SyntasticErrorSign ErrorMsg
-let g:syntastic_stl_format = ""
-      \ . "%W{"
-      \ . "%#STLWarningAlert#"
-      \ . "\ [".g:syntastic_warning_symbol." %fw(%w)]"
-      \ . "}"
-      \ . "%B{\ }"
-      \ . "%E{"
-      \ . "%#STLErrorAlert#"
-      \ . "\ [".g:syntastic_error_symbol." %fe(%e)]"
-      \ . "}\ "
-      \ . "%*"
-
-nnoremap <leader>sc :Errors<CR>
-
-vnoremap ,a= :Tabularize /=<CR>
-nnoremap ,a= :normal vir,a=<CR>
-cnoreabbrev Tab Tabularize
-
-let g:keep_trailing_spaces = 0
-command! -nargs=? KeepTrailingSpaces
-      \ if <q-args> == "" |
-      \   let g:keep_trailing_spaces = 1 |
-      \ else |
-      \   let g:keep_trailing_spaces = str2nr(<q-args>) |
-      \ endif
-
-aug remove_trailing_spaces
-  au!
-  au BufWritePre *
-        \ if ! g:keep_trailing_spaces |
-        \   call Preserve('%s/\s\+$//e') |
-        \   call Preserve('%s/\v($\n\s*)+%$//e') |
-        \ endif
-aug END
-
-" Executes a command and keeps the current view
-function! Preserve(command)
-  setlocal lazyredraw
-  let last_search=@/
-
-  let last_view = winsaveview()
-  silent execute a:command
-  call winrestview(last_view)
-
-  let @/=last_search
-  redraw
-  setlocal nolazyredraw
-endfunction
-
-" Executes a global function and keeps the current view
-function! PreserveFN(fn, ...)
-  if a:0
-    let args = "(".join(a:000, ",").")"
-  else
-    let args = "()"
-  end
-  let func = string(function(a:fn))
-
-  call Preserve("let g:preservedReturn =
-  ".func.args)
-
-  return g:preservedReturn
-endfunction
