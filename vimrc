@@ -45,7 +45,6 @@ source $VIMRUNTIME/menu.vim
 " Turn on the Wild menu
 set wildmenu
 
-set mousehide mouse=a ttymouse=urxvt
 set ttyfast
 
 " Ignore compiled files
