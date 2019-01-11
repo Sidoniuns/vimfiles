@@ -348,7 +348,7 @@ aug remove_trailing_spaces
   au BufWritePre *
         \ if ! g:keep_trailing_spaces |
         \   call Preserve('%s/\s\+$//e') |
-        \   call Preserve('%s/\v($\n\s*)+%$//e') |
+        " \   call Preserve('%s/\v($\n\s*)+%$//e') |
         \ endif
 aug END
 
