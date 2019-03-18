@@ -8,6 +8,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'mileszs/ack.vim'
+NeoBundle 'cohama/agit.vim'
 NeoBundle 'w0rp/ale'
 NeoBundle 'vim-scripts/bufexplorer.zip'
 NeoBundle 'ctrlpvim/ctrlp.vim'
